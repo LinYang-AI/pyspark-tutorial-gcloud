@@ -1,0 +1,1 @@
+from jobs.hello_spark.main import analyze
