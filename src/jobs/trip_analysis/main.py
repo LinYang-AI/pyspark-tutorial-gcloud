@@ -6,11 +6,23 @@ from pyspark.sql.window import Window
 spark = SparkSession.builder.appName("TaxiAnalysis").getOrCreate()
 
 def load_data():
-    # Load the NYC taxi data from Parquet files in Google Cloud Storage
-    data = spark.read.parquet("gs://pyspark-tutorial-linyoung/data/NYC/*")
-    return data
+    """
+    column names: VendorID, tpep_pickup_datetime, tpep_dropoff_datetime, passenger_count, trip_distance, RatecodeID, store_and_fwd_flag, PULocationID, DOLocationID, payment_type, fare_amount, extra, mta_tax, tip_amount, tolls_amount, improvement_surcharge, total_amount, congestion_surcharge, airport_fee
+    """
+    # Load the NYC taxi data from Parquet files
+    data_nyc = spark.read.parquet("./NYC/*.parquet")
+    
+    return data_nyc
 
 def trip_analysis(data):
+    """_summary_
+    Function Task: Average duration and distance of rides: Compare these metrics by time of day, day of week, 
+    and month of year. This can reveal patterns such as longer trips during rush hours, on 
+    weekends, or during holiday seasons.
+    """
+    
+    
+    
     # Average duration and distance of rides by time of day, day of week, and month of year
     window = Window.orderBy("pickup_datetime")
 
