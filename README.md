@@ -1,1 +1,11 @@
 # pyspark-tutorial-gcloud
+
+Output from the script
+
+![1691228952826](image/README/1691228952826.png)
+
+![1691229005170](image/README/1691229005170.png)
+
+![1691229054184](image/README/1691229054184.png)
+
+![1691229146154](image/README/1691229146154.png)
